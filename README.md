@@ -3,7 +3,12 @@
 
 **A demo app using Compose, Koin based on modern Android tech-stacks and follows a reactive programming model with [Unidirectional data flow](https://developer.android.com/jetpack/compose/architecture#udf-compose).**
 
-</br>
+## Screenshots 
+<p align="center">
+<img src="/preview/preview1.png" width="270"/>
+<img src="/preview/preview2.png" width="270"/>
+<img src="/preview/preview3.png" width="270"/>
+</p>
 
 ## Tech stack & Open-source libraries
 - Minimum SDK level 23
@@ -38,7 +43,7 @@ Have any questions, doubts or want to present your opinions, views? You're alway
 
 # License
 ```xml
-Designed and developed by 2023
+Designed and developed 2023 by tamnguyen
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

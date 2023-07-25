@@ -3,7 +3,12 @@
 
 **A demo app using Compose, Koin based on modern Android tech-stacks and follows a reactive programming model with [Unidirectional data flow](https://developer.android.com/jetpack/compose/architecture#udf-compose).**
 
-</br>
+## Screenshots 
+<p align="center">
+<img src="/preview/preview1.png" width="270"/>
+<img src="/preview/preview2.png" width="270"/>
+<img src="/preview/preview3.png" width="270"/>
+</p>
 
 ## Tech stack & Open-source libraries
 - Minimum SDK level 23

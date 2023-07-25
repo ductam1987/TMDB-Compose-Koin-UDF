@@ -43,7 +43,7 @@ Have any questions, doubts or want to present your opinions, views? You're alway
 
 # License
 ```xml
-Designed and developed by 2023
+Designed and developed 2023 by tamnguyen
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

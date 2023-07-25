@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recommendation">RECOMMENDATION</string>
+    <string name="category">CATEGORY</string>
+    <string name="popular">POPULAR</string>
+    <string name="top_rated">TOP RATED</string>
+    <string name="upcoming">UPCOMING</string>
+
+</resources>

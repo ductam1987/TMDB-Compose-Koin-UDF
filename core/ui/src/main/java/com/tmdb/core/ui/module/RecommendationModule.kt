@@ -1,8 +1,6 @@
 package com.tmdb.core.ui.module
 
-import android.util.Log
 import com.skydoves.sandwich.ApiResponse
-import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.db.SubDbMovie
 import com.tmdb.core.model.mapper.MoviesMapper
 import com.tmdb.core.model.mapper.RecommendationMapper

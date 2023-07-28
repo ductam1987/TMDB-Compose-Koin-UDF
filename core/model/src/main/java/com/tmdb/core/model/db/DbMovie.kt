@@ -30,8 +30,8 @@ data class DbMovie(
 ) {
     override fun toString(): String {
         return "DbMovie(id=$id, posterPath=$posterPath, popularity=$popularity, voteCount=$voteCount, video=$video, mediaType=$mediaType, " +
-                "adult=$adult, backdropPath=$backdropPath, originalLanguage=$originalLanguage, originalTitle=$originalTitle, genreIds=$genreIds, " +
-                "title=$title, voteAverage=$voteAverage, overview=$overview, releaseDate=$releaseDate)"
+            "adult=$adult, backdropPath=$backdropPath, originalLanguage=$originalLanguage, originalTitle=$originalTitle, genreIds=$genreIds, " +
+            "title=$title, voteAverage=$voteAverage, overview=$overview, releaseDate=$releaseDate)"
     }
 }
 

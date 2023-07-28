@@ -1,9 +1,9 @@
 package com.tmdbcompose.di
 
-import org.koin.dsl.module
-import com.tmdb.core.model.mapper.RecommendationMapper
 import com.tmdb.core.model.mapper.MoviesMapper
+import com.tmdb.core.model.mapper.RecommendationMapper
 import org.koin.core.module.dsl.factoryOf
+import org.koin.dsl.module
 
 /**
  * Created by Tam Nguyen on 27/07/2023.

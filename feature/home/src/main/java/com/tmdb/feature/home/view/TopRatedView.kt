@@ -11,10 +11,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.tmdb.core.model.network.Movie
 import com.tmdb.core.model.fakeData.listMovieFakeData
-import com.tmdb.core.model.fakeData.movieFakeData1
 import com.tmdb.core.model.fakeData.movieFakeData4
+import com.tmdb.core.model.network.Movie
 import com.tmdb.core.ui.MovieVerticalView
 import com.tmdb.core.ui.OnLastItemReached
 import com.tmdb.core.ui.TitleView

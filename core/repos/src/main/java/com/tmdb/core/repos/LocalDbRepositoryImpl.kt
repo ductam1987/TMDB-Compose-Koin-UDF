@@ -16,7 +16,6 @@ class LocalDbRepositoryImpl : LocalDbRepository {
 
     private lateinit var boxStore: BoxStore
 
-
     private val movieBox get() = boxStore.boxFor(DbMovie::class.java)
     private val moviesBox get() = boxStore.boxFor(DbMovies::class.java)
     override fun init(context: Context) {

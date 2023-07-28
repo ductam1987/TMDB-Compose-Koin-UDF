@@ -6,7 +6,7 @@ import com.tmdb.core.model.network.Movies
 /**
  * Created by Tam Nguyen on 28/07/2023.
  */
-class MoviesMapper : EntityMapper<DbMovies, Movies>  {
+class MoviesMapper : EntityMapper<DbMovies, Movies> {
 
     override fun mapToEntity(domain: Movies): DbMovies {
         return DbMovies(

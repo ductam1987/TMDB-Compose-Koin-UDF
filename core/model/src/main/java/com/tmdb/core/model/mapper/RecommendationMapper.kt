@@ -2,7 +2,6 @@ package com.tmdb.core.model.mapper
 
 import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.network.Movie
-import com.tmdb.core.model.network.Movies
 
 /**
  * Created by Tam Nguyen on 27/07/2023.
@@ -31,5 +30,4 @@ class RecommendationMapper : EntityMapper<DbMovie, Movie> {
             releaseDate = domain.release_date
         )
     }
-
 }

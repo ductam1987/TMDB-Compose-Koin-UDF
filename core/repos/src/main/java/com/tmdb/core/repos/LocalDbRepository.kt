@@ -3,7 +3,6 @@ package com.tmdb.core.repos
 import android.content.Context
 import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.db.DbMovies
-import com.tmdb.core.model.network.Movie
 import io.objectbox.BoxStore
 
 /**

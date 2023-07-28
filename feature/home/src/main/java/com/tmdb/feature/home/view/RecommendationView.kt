@@ -19,8 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.fakeData.listDbMovieFakeData
-import com.tmdb.core.model.network.Movie
-import com.tmdb.core.model.fakeData.listMovieFakeData
 import com.tmdb.core.ui.LoadImage
 import com.tmdb.core.ui.OnLastItemReached
 import com.tmdb.core.ui.TitleView

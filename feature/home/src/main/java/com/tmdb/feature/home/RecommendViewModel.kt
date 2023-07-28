@@ -3,7 +3,6 @@ package com.tmdb.feature.home
 import Constants
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.db.SubDbMovie
 import com.tmdb.core.model.mapper.MoviesMapper
 import com.tmdb.core.model.mapper.RecommendationMapper
@@ -56,7 +55,6 @@ class RecommendViewModel(
                     }
 
                     is ResultData.Error -> {
-
                     }
 
                     is ResultData.Loading -> {

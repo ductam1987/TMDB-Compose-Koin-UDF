@@ -35,6 +35,7 @@ constraintlayout = "1.0.1"
 gowtham-compose-ratingbar = "1.3.4"
 androidxNavigation = "2.6.0"
 androidxAccompanist = "0.30.1"
+objectbox = "3.6.0"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
@@ -68,17 +69,17 @@ androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-juni
 androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
-compose-ratingbar = {group ="com.github.a914-gowtham", name ="compose-ratingbar", version.ref = "gowtham-compose-ratingbar"}
+compose-ratingbar = { group = "com.github.a914-gowtham", name = "compose-ratingbar", version.ref = "gowtham-compose-ratingbar" }
 
 #Navigation
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
-androidx-navigation-accompanist = {group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "androidxAccompanist"}
+androidx-navigation-accompanist = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "androidxAccompanist" }
 
 #Preview
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-customview = { group = "androidx.customview", name = "customview", version.ref ="previewCustomView" }
-androidx-customview-poolingcontainer = { group = "androidx.customview", name = "customview-poolingcontainer", version.ref ="previewPoolingContainer" }
+androidx-customview = { group = "androidx.customview", name = "customview", version.ref = "previewCustomView" }
+androidx-customview-poolingcontainer = { group = "androidx.customview", name = "customview-poolingcontainer", version.ref = "previewPoolingContainer" }
 
 
 #Network
@@ -101,9 +102,10 @@ lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-ru
 
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+objectbox-gradlePlugin = { group = "io.objectbox", name = "objectbox-gradle-plugin", version.ref = "objectbox" }
 
 #Logger
-orhanobut-logger = {group = "com.orhanobut", name = "logger", version.ref = "logger"}
+orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
 
 #Image
 coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }

@@ -11,6 +11,8 @@ android {
 dependencies {
 
     implementation(project(":core:model"))
+    implementation(project(":core:repos"))
+    implementation(project(":core:network"))
 
     api(libs.androidx.compose.foundation)
     api(libs.androidx.compose.foundation.layout)
@@ -30,6 +32,7 @@ dependencies {
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
     implementation(libs.kotlinx.datetime)
+    implementation(libs.sandwich.network)
 
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.compose.ui.tooling.preview)

@@ -1,12 +1,12 @@
 package com.tmdb.core.network
 
 import com.skydoves.sandwich.ApiResponse
-import com.tmdb.core.model.Categories
-import com.tmdb.core.model.Credits
-import com.tmdb.core.model.MovieDetail
-import com.tmdb.core.model.Movies
-import com.tmdb.core.model.Reviews
-import com.tmdb.core.model.Videos
+import com.tmdb.core.model.network.Categories
+import com.tmdb.core.model.network.Credits
+import com.tmdb.core.model.network.MovieDetail
+import com.tmdb.core.model.network.Movies
+import com.tmdb.core.model.network.Reviews
+import com.tmdb.core.model.network.Videos
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

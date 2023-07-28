@@ -1,6 +1,6 @@
 package com.tmdb.core.model.fakeData
 
-import com.tmdb.core.model.Genre
+import com.tmdb.core.model.network.Genre
 
 /**
  * Created by Tam Nguyen on 18/07/2023.

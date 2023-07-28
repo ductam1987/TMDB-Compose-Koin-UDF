@@ -7,10 +7,10 @@ import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tmdb.core.model.Credits
-import com.tmdb.core.model.MovieDetail
-import com.tmdb.core.model.Reviews
-import com.tmdb.core.model.Videos
+import com.tmdb.core.model.network.Credits
+import com.tmdb.core.model.network.MovieDetail
+import com.tmdb.core.model.network.Reviews
+import com.tmdb.core.model.network.Videos
 import com.tmdb.core.network.CoroutineDispatchers
 import com.tmdb.core.repos.MovieDetailRepository
 import com.tmdb.core.ui.base.StateModel
@@ -51,7 +51,6 @@ class MovieDetailViewModel(
     fun getMovieReview(movieId: Int) {
         viewModelScope.launch(coroutineDispatchersIml.io) {
             val data = movieDetailRepository.getMovieReview(movieId = movieId, apiKey = Constants.API_KEY)
-            Log.d("TAG", "___getMovieReview :::: $data")
             movieReviewState.updateEvent(data)
         }
     }

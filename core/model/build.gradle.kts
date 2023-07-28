@@ -2,6 +2,7 @@ plugins {
     id("tmdbcompose.android.library")
     id("tmdbcompose.android.library.compose")
     id("kotlinx-serialization")
+    id("tmdbcompose.objectbox")
 }
 
 android {

@@ -20,6 +20,8 @@ val allModules = module {
         appModule,
         networkModule,
         viewModelModule,
-        repositoryModule
+        repositoryModule,
+        databaseModule,
+        mapperModule
     )
 }

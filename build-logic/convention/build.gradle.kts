@@ -12,6 +12,7 @@ java {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.objectbox.gradlePlugin)
 }
 
 gradlePlugin {
@@ -39,6 +40,11 @@ gradlePlugin {
         register("androidFeature") {
             id = "tmdbcompose.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
+        }
+
+        register("ObjectBox") {
+            id = "tmdbcompose.objectbox"
+            implementationClass = "AndroidObjectBoxLibraryPlugin"
         }
     }
 }

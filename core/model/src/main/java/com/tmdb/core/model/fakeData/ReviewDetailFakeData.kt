@@ -1,7 +1,7 @@
 package com.tmdb.core.model.fakeData
 
-import com.tmdb.core.model.AuthorDetail
-import com.tmdb.core.model.ReviewDetails
+import com.tmdb.core.model.network.AuthorDetail
+import com.tmdb.core.model.network.ReviewDetails
 
 /**
  * Created by Tam Nguyen on 24/07/2023.

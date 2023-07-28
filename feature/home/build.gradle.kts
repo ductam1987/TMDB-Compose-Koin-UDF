@@ -11,4 +11,5 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompact)
+    implementation(libs.orhanobut.logger)
 }

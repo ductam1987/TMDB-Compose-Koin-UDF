@@ -17,10 +17,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tmdb.core.model.Movie
+import com.tmdb.core.model.db.DbMovie
+import com.tmdb.core.model.network.Movie
 import com.tmdb.feature.home.view.CategoryView
 import com.tmdb.feature.home.view.PopularView
 import com.tmdb.feature.home.view.RecommendationView
@@ -39,10 +41,12 @@ fun HomeScreen(
     navToMovieDetail: (Int) -> Unit,
 ) {
 
+    val context = LocalContext.current
+
     /**
      * Movie Recommend
      */
-    val moviesRecommendation = remember { mutableStateListOf<Movie>() }
+    val moviesRecommendation = remember { mutableStateListOf<DbMovie>() }
     val totalMoviesRecommend: MutableState<Int> = remember { mutableStateOf(0) }
     val pagingMoviesRecommend = remember { mutableStateOf(1) }
 
@@ -80,9 +84,9 @@ fun HomeScreen(
 
     LaunchedEffect(Unit) {
         recommendViewModel.getTMDBRecommend(paging = pagingMoviesRecommend.value) { _movies ->
-            if (_movies?.results?.isNotEmpty() == true) {
-                moviesRecommendation.addAll(_movies.results)
-                totalMoviesRecommend.value = _movies.total_results
+            if (_movies?.listDbMovies?.isNotEmpty() == true) {
+                moviesRecommendation.addAll(_movies.listDbMovies ?: emptyList())
+                totalMoviesRecommend.value = _movies.totalResults ?: 0
             }
         }
     }
@@ -143,8 +147,8 @@ fun HomeScreen(
         RecommendationView(totalMoviesRecommend = totalMoviesRecommend, movies = moviesRecommendation) {
             pagingMoviesRecommend.value += 1
             recommendViewModel.getTMDBRecommend(paging = pagingMoviesRecommend.value) { _movies ->
-                if (_movies?.results?.isNotEmpty() == true) {
-                    moviesRecommendation.addAll(_movies.results)
+                if (_movies?.listDbMovies?.isNotEmpty() == true) {
+                    moviesRecommendation.addAll(_movies.listDbMovies!!)
                 }
             }
         }

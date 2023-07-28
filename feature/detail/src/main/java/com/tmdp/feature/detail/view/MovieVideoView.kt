@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tmdb.core.model.VideoDetails
+import com.tmdb.core.model.network.VideoDetails
 import com.tmdb.core.ui.MovieVideoItem
 import theme.colorNeutralLight
 

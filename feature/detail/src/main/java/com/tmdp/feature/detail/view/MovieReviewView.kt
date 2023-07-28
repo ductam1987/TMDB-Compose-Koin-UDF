@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tmdb.core.model.ReviewDetails
+import com.tmdb.core.model.network.ReviewDetails
 import com.tmdb.core.ui.MovieReviewItem
 import theme.colorNeutralLight
 

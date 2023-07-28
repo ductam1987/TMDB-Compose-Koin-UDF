@@ -1,62 +1,63 @@
 package com.tmdb.core.model.fakeData
 
-import com.tmdb.core.model.Movie
+import com.tmdb.core.model.db.DbMovie
+import com.tmdb.core.model.network.Movie
 
 /**
  * Created by Tam Nguyen on 20/07/2023.
  */
-val movieFakeData1 = Movie(
+val movieFakeData1 = DbMovie(
     adult = false,
-    backdrop_path = "/AaABt75ZzfMGrscUR2seabz4PEX.jpg",
+    backdropPath = "/AaABt75ZzfMGrscUR2seabz4PEX.jpg",
     id = 297762,
     title = "Wonder Woman",
-    original_language = "en",
-    original_title = "Wonder Woman",
+    originalLanguage = "en",
+    originalTitle = "Wonder Woman",
     overview = "An Amazon princess comes to the world of Man in the grips of the First World War to confront the forces of evil and bring an end to human conflict.",
-    poster_path = "/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg",
-    media_type = "movie",
-    genre_ids = arrayListOf("28,12,14"),
+    posterPath = "/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg",
+    mediaType = "movie",
+    genreIds = arrayListOf("28,12,14"),
     popularity = 73.592,
-    release_date = "2017-05-30",
+    releaseDate = "2017-05-30",
     video = false,
-    vote_average = 7.238,
-    vote_count = 18764
+    voteAverage = 7.238,
+    voteCount = 18764
 )
 
-val movieFakeData2 = Movie(
+val movieFakeData2 = DbMovie(
     adult = false,
-    backdrop_path = "/kaIfm5ryEOwYg8mLbq8HkPuM1Fo.jpg",
+    backdropPath = "/kaIfm5ryEOwYg8mLbq8HkPuM1Fo.jpg",
     id = 284053,
     title = "Thor: Ragnarok",
-    original_language = "en",
-    original_title = "Thor: Ragnarok",
+    originalLanguage = "en",
+    originalTitle = "Thor: Ragnarok",
     overview = "Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the destruction of his home-world and the end of Asgardian civilization, at the hands of a powerful new threat, the ruthless Hela.",
-    poster_path = "/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
-    media_type = "movie",
-    genre_ids = arrayListOf("28,12,878"),
+    posterPath = "/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+    mediaType = "movie",
+    genreIds = arrayListOf("28,12,878"),
     popularity = 79.436,
-    release_date = "2017-10-02",
+    releaseDate = "2017-10-02",
     video = false,
-    vote_average = 7.595,
-    vote_count = 19306
+    voteAverage = 7.595,
+    voteCount = 19306
 )
 
-val movieFakeData3 = Movie(
+val movieFakeData3 = DbMovie(
     adult = false,
-    backdrop_path = "/fn4n6uOYcB6Uh89nbNPoU2w80RV.jpg",
+    backdropPath = "/fn4n6uOYcB6Uh89nbNPoU2w80RV.jpg",
     id = 315635,
     title = "Spider-Man: Homecoming",
-    original_language = "en",
-    original_title = "Spider-Man: Homecoming",
+    originalLanguage = "en",
+    originalTitle = "Spider-Man: Homecoming",
     overview = "Following the events of Captain America: Civil War, Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in Queens, New York City, with fighting crime as his superhero alter ego Spider-Man as a new threat, the Vulture, emerges.",
-    poster_path = "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
-    media_type = "movie",
-    genre_ids = arrayListOf("28,12,878,18"),
+    posterPath = "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+    mediaType = "movie",
+    genreIds = arrayListOf("28,12,878,18"),
     popularity = 111.169,
-    release_date = "2017-07-05",
+    releaseDate = "2017-07-05",
     video = false,
-    vote_average = 7.346,
-    vote_count = 20226
+    voteAverage = 7.346,
+    voteCount = 20226
 )
 
 val movieFakeData4 = Movie(
@@ -95,4 +96,6 @@ val movieFakeData5 = Movie(
     vote_count = 12343
 )
 
-val listMovieFakeData = listOf(movieFakeData1, movieFakeData2, movieFakeData3, movieFakeData4, movieFakeData5)
+val listMovieFakeData = listOf(movieFakeData4, movieFakeData5)
+
+val listDbMovieFakeData = listOf(movieFakeData1, movieFakeData2, movieFakeData3)

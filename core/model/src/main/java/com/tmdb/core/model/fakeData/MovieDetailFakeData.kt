@@ -1,9 +1,9 @@
 package com.tmdb.core.model.fakeData
 
-import com.tmdb.core.model.Genre
-import com.tmdb.core.model.MovieDetail
-import com.tmdb.core.model.ProductCountries
-import com.tmdb.core.model.SpokenLanguages
+import com.tmdb.core.model.network.Genre
+import com.tmdb.core.model.network.MovieDetail
+import com.tmdb.core.model.network.ProductCountries
+import com.tmdb.core.model.network.SpokenLanguages
 
 /**
  * Created by Tam Nguyen on 24/07/2023.

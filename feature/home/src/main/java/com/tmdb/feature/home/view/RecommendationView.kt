@@ -17,7 +17,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.tmdb.core.model.Movie
+import com.tmdb.core.model.db.DbMovie
+import com.tmdb.core.model.fakeData.listDbMovieFakeData
+import com.tmdb.core.model.network.Movie
 import com.tmdb.core.model.fakeData.listMovieFakeData
 import com.tmdb.core.ui.LoadImage
 import com.tmdb.core.ui.OnLastItemReached
@@ -32,7 +34,7 @@ import com.tmdb.feature.recommend.R
 @Composable
 fun RecommendationView(
     totalMoviesRecommend: MutableState<Int>,
-    movies: List<Movie>,
+    movies: List<DbMovie>,
     loadMore: () -> Unit,
 ) {
     Column(modifier = Modifier.padding(top = 10.dp, start = 10.dp, end = 10.dp)) {
@@ -63,7 +65,7 @@ fun RecommendationView(
 }
 
 @Composable
-fun RecommendationViewDetail(movie: Movie?) {
+fun RecommendationViewDetail(movie: DbMovie?) {
     Box(
         modifier = Modifier
             .size(width = 300.dp, height = 150.dp)
@@ -74,7 +76,7 @@ fun RecommendationViewDetail(movie: Movie?) {
             shape = RoundedCornerShape(10.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
         ) {
-            LoadImage(imageUrl = movie?.backdrop_path?.convertImageURL(), imageWith = 300, imageHeight = 150)
+            LoadImage(imageUrl = movie?.backdropPath?.convertImageURL(), imageWith = 300, imageHeight = 150)
         }
     }
 }
@@ -82,9 +84,9 @@ fun RecommendationViewDetail(movie: Movie?) {
 @Preview
 @Composable
 fun PreviewRecommendation() {
-    val moviesRecommendation = remember { mutableStateListOf<Movie>() }
+    val moviesRecommendation = remember { mutableStateListOf<DbMovie>() }
     val totalMoviesRecommend: MutableState<Int> = remember { mutableStateOf(0) }
-    moviesRecommendation.addAll(listMovieFakeData)
+    moviesRecommendation.addAll(listDbMovieFakeData)
     totalMoviesRecommend.value = 100
     RecommendationView(totalMoviesRecommend, moviesRecommendation) {}
 }

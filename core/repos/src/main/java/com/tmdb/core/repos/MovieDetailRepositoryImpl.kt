@@ -1,10 +1,10 @@
 package com.tmdb.core.repos
 
 import com.skydoves.sandwich.getOrElse
-import com.tmdb.core.model.Credits
-import com.tmdb.core.model.MovieDetail
-import com.tmdb.core.model.Reviews
-import com.tmdb.core.model.Videos
+import com.tmdb.core.model.network.Credits
+import com.tmdb.core.model.network.MovieDetail
+import com.tmdb.core.model.network.Reviews
+import com.tmdb.core.model.network.Videos
 import com.tmdb.core.network.RestTMDBService
 
 /**

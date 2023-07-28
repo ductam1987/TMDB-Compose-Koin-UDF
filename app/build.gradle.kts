@@ -52,6 +52,7 @@ dependencies {
 
     implementation(project(":core:network"))
     implementation(project(":core:repos"))
+    implementation(project(":core:model"))
     implementation(project(":feature:home"))
     implementation(project(":feature:detail"))
 
@@ -74,4 +75,5 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     debugImplementation(libs.androidx.compose.ui.test)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.orhanobut.logger)
 }

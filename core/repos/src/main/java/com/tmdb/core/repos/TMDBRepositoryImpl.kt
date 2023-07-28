@@ -1,19 +1,23 @@
 package com.tmdb.core.repos
 
+import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.getOrElse
-import com.tmdb.core.model.Categories
-import com.tmdb.core.model.Movies
+import com.tmdb.core.model.network.Categories
+import com.tmdb.core.model.network.Movies
 import com.tmdb.core.network.RestTMDBService
+import com.tmdb.core.network.config.RecommendConfig
 
 /**
  * Created by Tam Nguyen on 21/07/2023.
  */
 class TMDBRepositoryImpl(private val restTMDBService: RestTMDBService) : TMDBRepository {
 
-    override suspend fun getMoviesRecommendations(movieId: Int, apiKey: String?, page: Int?): Movies? {
-        return restTMDBService.getMoviesRecommendations(movie_id = movieId, api_key = apiKey, page = page).getOrElse {
-            null
-        }
+    override suspend fun getMoviesRecommendations(recommendConfig: RecommendConfig): ApiResponse<Movies?> {
+        return restTMDBService.getMoviesRecommendations(
+            movie_id = recommendConfig.movieId,
+            api_key = recommendConfig.apiKey,
+            page = recommendConfig.page
+        )
     }
 
     override suspend fun getGender(apiKey: String?): Categories? {

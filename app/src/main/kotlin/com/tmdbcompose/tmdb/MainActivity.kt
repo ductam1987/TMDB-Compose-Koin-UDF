@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.orhanobut.logger.Logger
 import com.tmdbcompose.theme.MyApplicationTheme
 import navigation.RootNavigation
 

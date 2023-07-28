@@ -1,0 +1,121 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:2713148950282928359",
+      "lastPropertyId": "15:8770312139772976905",
+      "name": "DbMovie",
+      "properties": [
+        {
+          "id": "1:3072336127308755661",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:4145571308487196657",
+          "name": "posterPath",
+          "type": 9
+        },
+        {
+          "id": "3:4282875444252937083",
+          "name": "popularity",
+          "type": 8
+        },
+        {
+          "id": "4:7015165221444416977",
+          "name": "voteCount",
+          "type": 5
+        },
+        {
+          "id": "5:3412413349734451442",
+          "name": "video",
+          "type": 1
+        },
+        {
+          "id": "6:4857841221897122604",
+          "name": "mediaType",
+          "type": 9
+        },
+        {
+          "id": "7:7558669880123207888",
+          "name": "adult",
+          "type": 1
+        },
+        {
+          "id": "8:6992638684014692719",
+          "name": "backdropPath",
+          "type": 9
+        },
+        {
+          "id": "9:4903892861180021554",
+          "name": "originalLanguage",
+          "type": 9
+        },
+        {
+          "id": "10:2939797227795952088",
+          "name": "originalTitle",
+          "type": 9
+        },
+        {
+          "id": "11:7086723110779309099",
+          "name": "genreIds",
+          "type": 30
+        },
+        {
+          "id": "12:3018508455842995426",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "13:3991300458816782950",
+          "name": "voteAverage",
+          "type": 8
+        },
+        {
+          "id": "14:7473079582687564405",
+          "name": "overview",
+          "type": 9
+        },
+        {
+          "id": "15:8770312139772976905",
+          "name": "releaseDate",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:5411999651084113267",
+      "lastPropertyId": "2:4027873826240529793",
+      "name": "DbMovies",
+      "properties": [
+        {
+          "id": "1:3183178751762242935",
+          "name": "totalPages",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:4027873826240529793",
+          "name": "totalResult",
+          "type": 5
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:5411999651084113267",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

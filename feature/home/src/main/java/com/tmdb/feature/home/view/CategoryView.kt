@@ -17,7 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tmdb.core.model.Genre
+import com.tmdb.core.model.network.Genre
 import com.tmdb.core.model.fakeData.genreFakeData1
 import com.tmdb.core.ui.TitleView
 import com.tmdb.feature.recommend.R

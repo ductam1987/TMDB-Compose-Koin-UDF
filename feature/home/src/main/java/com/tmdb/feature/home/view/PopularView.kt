@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.tmdb.core.model.Movie
+import com.tmdb.core.model.network.Movie
 import com.tmdb.core.ui.MovieVerticalView
 import com.tmdb.core.ui.OnLastItemReached
 import com.tmdb.core.ui.TitleView

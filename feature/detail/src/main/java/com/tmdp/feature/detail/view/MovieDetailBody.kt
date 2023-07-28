@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarStyle
-import com.tmdb.core.model.MovieDetail
+import com.tmdb.core.model.network.MovieDetail
 import com.tmdb.core.model.fakeData.movieDetailFakeData
 import com.tmdb.core.ui.LoadImage
 import com.tmdb.core.ui.convertImageURL

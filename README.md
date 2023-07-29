@@ -1,7 +1,7 @@
 
 <h1 align="center">TMDP Compose 🚧 [Work in progress] 🚧</h1></br>
 
-**A demo app using Compose, Koin based on modern Android tech-stacks and follows a reactive programming model with [Unidirectional data flow](https://developer.android.com/jetpack/compose/architecture#udf-compose).**
+**A demo app using Compose, Koin, ObjectBox... based on modern Android tech-stacks and follows a reactive programming model with [Unidirectional data flow](https://developer.android.com/jetpack/compose/architecture#udf-compose).**
 
 ## Screenshots 
 <p align="center">
@@ -30,7 +30,13 @@
 - [Ktlint](https://github.com/pinterest/ktlint) - Coding convention.
 - [Modularization](https://developer.android.com/topic/modularization#what-is-modularization) and [Gradle Convention Plugin](https://docs.gradle.org/current/samples/sample_convention_plugins.html).
 - [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - For writing Gradle build scripts using Kotlin.
+- [ObjectBox](https://docs.objectbox.io/getting-started) - The Lightning-Fast Mobile Database for Persistent Object Storage.
 
+## Resouces reference:
+- [Now In Android](https://github.com/android/nowinandroid)
+- [Foodium App](https://github.com/PatilShreyas/Foodium/tree/master)
+- [Gradle Kotlin convention plugins](https://docs.gradle.org/current/samples/sample_convention_plugins.html)
+- ....
 
 ## Contribute
 If you want to contribute to this, you're always welcome!

@@ -28,9 +28,6 @@ object RecommendationModule {
         moviesMapper: MoviesMapper,
         coroutineDispatchers: CoroutineDispatchers
     ): Flow<ResultData<SubDbMovie>> {
-
-        val totalResult = 0
-
         return object : NetworkBoundRepository<SubDbMovie, Movies?>() {
             override suspend fun saveRemoteData(response: Movies?) {
                 response?.results?.let { listMovie ->
@@ -40,7 +37,12 @@ object RecommendationModule {
             }
 
             override suspend fun fetchFromLocal(): Flow<SubDbMovie> = flow {
-                emit(SubDbMovie(totalResults = localDbRepository.getMovies()?.totalResult, listDbMovies = localDbRepository.getListMovie()))
+                emit(
+                    SubDbMovie(
+                        totalResults = localDbRepository.getMovies()?.totalResult,
+                        listDbMovies = localDbRepository.getListMovie()
+                    )
+                )
             }
 
             override suspend fun fetchFromRemote(): ApiResponse<Movies?> {

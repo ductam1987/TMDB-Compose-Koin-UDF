@@ -26,17 +26,19 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarStyle
-import com.tmdb.core.model.fakeData.movieDetailFakeData
-import com.tmdb.core.model.network.MovieDetail
+import com.tmdb.core.model.db.DbMovieDetail
+import com.tmdb.core.model.network.Genre
+import com.tmdb.core.model.network.ProductCountries
 import com.tmdb.core.ui.LoadImage
 import com.tmdb.core.ui.convertImageURL
 import com.tmdb.feature.detail.R
+import kotlinx.serialization.json.Json
 
 /**
  * Created by Tam Nguyen on 24/07/2023.
  */
 @Composable
-fun MovieDetailBody(movieDetail: MovieDetail, navBack: () -> Unit) {
+fun MovieDetailBody(movieDetail: DbMovieDetail, navBack: () -> Unit) {
     ConstraintLayout(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
@@ -56,7 +58,7 @@ fun MovieDetailBody(movieDetail: MovieDetail, navBack: () -> Unit) {
                     end.linkTo(parent.end)
                 }
         ) {
-            LoadImage(imageWith = null, imageHeight = 250, imageUrl = movieDetail.backdrop_path?.convertImageURL())
+            LoadImage(imageWith = null, imageHeight = 250, imageUrl = movieDetail.backdropPath?.convertImageURL())
         }
 
         Image(
@@ -82,10 +84,10 @@ fun MovieDetailBody(movieDetail: MovieDetail, navBack: () -> Unit) {
                     start.linkTo(parent.start, 15.dp)
                 }
         ) {
-            LoadImage(imageWith = 100, imageHeight = 150, imageUrl = movieDetail.poster_path?.convertImageURL())
+            LoadImage(imageWith = 100, imageHeight = 150, imageUrl = movieDetail.posterPath?.convertImageURL())
         }
 
-        val rated = (movieDetail.vote_average * 5) / 10
+        val rated = (movieDetail.voteAverage * 5) / 10
         Text(
             text = rated.toString(),
             fontSize = 16.sp, maxLines = 1,
@@ -113,14 +115,18 @@ fun MovieDetailBody(movieDetail: MovieDetail, navBack: () -> Unit) {
         )
 
         Text(
-            text = movieDetail.release_date.toString(), fontSize = 16.sp,
+            text = movieDetail.releaseDate.toString(), fontSize = 16.sp,
             modifier = Modifier.constrainAs(tvMovieDate) {
                 top.linkTo(tvRatedNumber.bottom, 10.dp)
                 start.linkTo(tvRatedNumber.start)
             }
         )
 
-        val country = movieDetail.production_countries?.let { productCountries -> productCountries[0].iso_3166_1 } ?: "US"
+        val productCountries = movieDetail.productionCountries?.let {
+            Json.decodeFromString<ArrayList<ProductCountries>>(it)
+        } ?: emptyList()
+
+        val country = productCountries[0].iso_3166_1 ?: "US"
         Text(
             text = country, fontSize = 16.sp,
             color = Color.White,
@@ -137,7 +143,12 @@ fun MovieDetailBody(movieDetail: MovieDetail, navBack: () -> Unit) {
                 }
                 .padding(start = 6.dp, top = 4.dp, end = 6.dp, bottom = 4.dp)
         )
-        val genre = movieDetail.genres?.let { genres -> genres[0].name } ?: "ACTION"
+
+        val genre = movieDetail.genres.let {
+            Json.decodeFromString<ArrayList<Genre>>(it)[0].name
+        } ?: "ACTION"
+
+        // val genre = movieDetail.genres?.let { genres -> genres[0].name } ?: "ACTION"
         Text(
             text = genre.toString(), fontSize = 16.sp,
             color = Color.White,
@@ -183,5 +194,5 @@ fun MovieDetailBody(movieDetail: MovieDetail, navBack: () -> Unit) {
 @Composable
 @Preview
 fun PreviewMovieDetail() {
-    MovieDetailBody(movieDetail = movieDetailFakeData) {}
+    // MovieDetailBody(movieDetail = dbMovieDetailFakeData) {}
 }

@@ -86,9 +86,28 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:5411999651084113267",
+      "lastPropertyId": "2:4027873826240529793",
+      "name": "DbMovies",
+      "properties": [
+        {
+          "id": "1:3183178751762242935",
+          "name": "totalPages",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:4027873826240529793",
+          "name": "totalResult",
+          "type": 5
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:2713148950282928359",
+  "lastEntityId": "2:5411999651084113267",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

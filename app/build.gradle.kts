@@ -76,4 +76,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(libs.orhanobut.logger)
+    implementation(libs.kotlinx.serialization.json)
 }

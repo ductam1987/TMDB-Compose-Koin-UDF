@@ -2,6 +2,8 @@ package com.tmdb.core.repos
 
 import android.content.Context
 import com.tmdb.core.model.db.DbMovie
+import com.tmdb.core.model.db.DbMovieDetail
+import com.tmdb.core.model.db.DbMovieDetail_
 import com.tmdb.core.model.db.DbMovies
 import com.tmdb.core.model.db.MyObjectBox
 import io.objectbox.BoxStore
@@ -18,6 +20,8 @@ class LocalDbRepositoryImpl : LocalDbRepository {
 
     private val movieBox get() = boxStore.boxFor(DbMovie::class.java)
     private val moviesBox get() = boxStore.boxFor(DbMovies::class.java)
+    private val movieDetail get() = boxStore.boxFor(DbMovieDetail::class.java)
+
     override fun init(context: Context) {
         if (!::boxStore.isInitialized) {
             boxStore = try {
@@ -36,14 +40,22 @@ class LocalDbRepositoryImpl : LocalDbRepository {
     }
 
     override fun getBox(): BoxStore = boxStore
+
     override fun getListMovie(): List<DbMovie> {
         return movieBox.query().build().find()
     }
 
     override fun getMovies(): DbMovies? = moviesBox.query().build().findFirst()
 
+    override fun getMovieDetail(movieId: Long): DbMovieDetail? = movieDetail.query(DbMovieDetail_.id.equal(movieId)).build().findFirst()
+
     override suspend fun saveListMovie(listDbMovie: List<DbMovie>) = movieBox.put(listDbMovie)
+
     override suspend fun saveMovies(dbMovies: DbMovies) {
         moviesBox.put(dbMovies)
+    }
+
+    override suspend fun saveMovieDetail(dbMovieDetail: DbMovieDetail) {
+        movieDetail.put(dbMovieDetail)
     }
 }

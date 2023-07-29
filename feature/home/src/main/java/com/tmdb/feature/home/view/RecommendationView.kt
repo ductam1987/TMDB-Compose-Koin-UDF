@@ -34,10 +34,14 @@ fun RecommendationView(
     totalMoviesRecommend: MutableState<Int>,
     movies: List<DbMovie>,
     loadMore: () -> Unit,
+    navToMovieDetail: (Int) -> Unit?
 ) {
     Column(modifier = Modifier.padding(top = 10.dp, start = 10.dp, end = 10.dp)) {
 
-        TitleView(stringResourceId = R.string.recommendation, imgResourceId = R.drawable.ic_arrow_right)
+        TitleView(
+            stringResourceId = R.string.recommendation,
+            imgResourceId = R.drawable.ic_arrow_right
+        )
 
         val listState = rememberLazyListState()
         LazyRow(
@@ -50,7 +54,7 @@ fun RecommendationView(
                     movies.distinct()[index].id
                 }
             ) { index ->
-                RecommendationViewDetail(movies.distinct()[index])
+                RecommendationViewDetail(movies.distinct()[index], navToMovieDetail)
             }
         }
 
@@ -63,7 +67,7 @@ fun RecommendationView(
 }
 
 @Composable
-fun RecommendationViewDetail(movie: DbMovie?) {
+fun RecommendationViewDetail(movie: DbMovie?, navToMovieDetail: (Int) -> Unit?) {
     Box(
         modifier = Modifier
             .size(width = 300.dp, height = 150.dp)
@@ -74,7 +78,14 @@ fun RecommendationViewDetail(movie: DbMovie?) {
             shape = RoundedCornerShape(10.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
         ) {
-            LoadImage(imageUrl = movie?.backdropPath?.convertImageURL(), imageWith = 300, imageHeight = 150)
+            LoadImage(
+                imageUrl = movie?.backdropPath?.convertImageURL(),
+                imageWith = 300,
+                imageHeight = 150,
+                onClick = {
+                    navToMovieDetail.invoke(movie?.id?.toInt() ?: 0)
+                }
+            )
         }
     }
 }
@@ -86,5 +97,10 @@ fun PreviewRecommendation() {
     val totalMoviesRecommend: MutableState<Int> = remember { mutableStateOf(0) }
     moviesRecommendation.addAll(listDbMovieFakeData)
     totalMoviesRecommend.value = 100
-    RecommendationView(totalMoviesRecommend, moviesRecommendation) {}
+    RecommendationView(
+        totalMoviesRecommend,
+        moviesRecommendation,
+        navToMovieDetail = {},
+        loadMore = {}
+    )
 }

@@ -2,6 +2,7 @@ package com.tmdb.core.repos
 
 import android.content.Context
 import com.tmdb.core.model.db.DbMovie
+import com.tmdb.core.model.db.DbMovieDetail
 import com.tmdb.core.model.db.DbMovies
 import io.objectbox.BoxStore
 
@@ -18,7 +19,11 @@ interface LocalDbRepository {
 
     fun getMovies(): DbMovies?
 
+    fun getMovieDetail(movieId: Long): DbMovieDetail?
+
     suspend fun saveListMovie(listDbMovie: List<DbMovie>)
 
     suspend fun saveMovies(dbMovies: DbMovies)
+
+    suspend fun saveMovieDetail(dbMovieDetail: DbMovieDetail)
 }

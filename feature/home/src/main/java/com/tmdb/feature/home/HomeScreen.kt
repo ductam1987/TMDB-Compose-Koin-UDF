@@ -144,14 +144,20 @@ fun HomeScreen(
             )
         }
 
-        RecommendationView(totalMoviesRecommend = totalMoviesRecommend, movies = moviesRecommendation) {
-            pagingMoviesRecommend.value += 1
-            recommendViewModel.getTMDBRecommend(paging = pagingMoviesRecommend.value) { _movies ->
-                if (_movies?.listDbMovies?.isNotEmpty() == true) {
-                    moviesRecommendation.addAll(_movies.listDbMovies!!)
+        RecommendationView(
+            totalMoviesRecommend = totalMoviesRecommend, movies = moviesRecommendation,
+            navToMovieDetail = {
+                navToMovieDetail.invoke(it)
+            },
+            loadMore = {
+                pagingMoviesRecommend.value += 1
+                recommendViewModel.getTMDBRecommend(paging = pagingMoviesRecommend.value) { _movies ->
+                    if (_movies?.listDbMovies?.isNotEmpty() == true) {
+                        moviesRecommendation.addAll(_movies.listDbMovies!!)
+                    }
                 }
             }
-        }
+        )
 
         CategoryView(listGenre = genreList.value?.genres ?: emptyList())
 

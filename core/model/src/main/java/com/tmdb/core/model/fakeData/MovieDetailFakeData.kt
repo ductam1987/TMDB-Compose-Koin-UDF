@@ -63,7 +63,7 @@ val dbMovieDetailFakeData = DbMovieDetail(
     adult = false,
     backdropPath = "/yF1eOkaYvwiORauRCPWznV9xVvi.jpg",
     budget = 190000000,
-    genres = "",
+    genres = "[{\"id\":28,\"name\":\"Action\"},{\"id\":80,\"name\":\"Crime\"},{\"id\":18,\"name\":\"Drama\"}]",
     // genres = arrayListOf(
     //     Genre(id = 28, name = "Action"),
     //     Genre(id = 12, name = "Adventure"),
@@ -82,7 +82,7 @@ val dbMovieDetailFakeData = DbMovieDetail(
     releaseDate = "2023-06-13",
     revenue = 267481043,
     runtime = 144,
-    spokenLanguages = "",
+    spokenLanguages = "[{\"iso_639_1\":\"en\",\"name\":\"English\"},{\"iso_639_1\":\"ur\",\"name\":\"اردو\"},{\"iso_639_1\":\"zh\",\"name\":\"普通话\"}]",
     // arrayListOf(
     //     SpokenLanguages(
     //         iso_639_1 = "en",
@@ -103,7 +103,7 @@ val dbMovieDetailFakeData = DbMovieDetail(
     video = false,
     voteAverage = 6.9263543543543534,
     voteCount = 1379,
-    productionCountries = ""
+    productionCountries = "[{\"iso_3166_1\":\"GB\",\"name\":\"United Kingdom\"},{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}]"
     // arrayListOf(
     //     ProductCountries(
     //         iso_3166_1 = "US",

@@ -27,6 +27,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarStyle
 import com.tmdb.core.model.db.DbMovieDetail
+import com.tmdb.core.model.fakeData.dbMovieDetailFakeData
 import com.tmdb.core.model.network.Genre
 import com.tmdb.core.model.network.ProductCountries
 import com.tmdb.core.ui.LoadImage
@@ -148,9 +149,8 @@ fun MovieDetailBody(movieDetail: DbMovieDetail, navBack: () -> Unit) {
             Json.decodeFromString<ArrayList<Genre>>(it)[0].name
         } ?: "ACTION"
 
-        // val genre = movieDetail.genres?.let { genres -> genres[0].name } ?: "ACTION"
         Text(
-            text = genre.toString(), fontSize = 16.sp,
+            text = genre, fontSize = 16.sp,
             color = Color.White,
             modifier = Modifier
                 .constrainAs(tvGenre) {
@@ -194,5 +194,5 @@ fun MovieDetailBody(movieDetail: DbMovieDetail, navBack: () -> Unit) {
 @Composable
 @Preview
 fun PreviewMovieDetail() {
-    // MovieDetailBody(movieDetail = dbMovieDetailFakeData) {}
+    MovieDetailBody(movieDetail = dbMovieDetailFakeData) {}
 }

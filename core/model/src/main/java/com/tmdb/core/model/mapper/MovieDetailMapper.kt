@@ -1,5 +1,6 @@
 package com.tmdb.core.model.mapper
 
+import android.util.Log
 import com.tmdb.core.model.db.DbMovieDetail
 import com.tmdb.core.model.network.MovieDetail
 import kotlinx.serialization.encodeToString
@@ -16,6 +17,9 @@ class MovieDetailMapper(
     }
 
     override fun mapToEntity(domain: MovieDetail): DbMovieDetail {
+        Log.d("TAG", "___mapToEntity 00 = " + jsonSerializer.encodeToString(domain.genres))
+        Log.d("TAG", "___mapToEntity 11 = " + jsonSerializer.encodeToString(domain.spoken_languages))
+        Log.d("TAG", "___mapToEntity 22 = " + jsonSerializer.encodeToString(domain.production_countries))
         return DbMovieDetail(
             id = domain.id.toLong(),
             adult = domain.adult,

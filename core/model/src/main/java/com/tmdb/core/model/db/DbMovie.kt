@@ -1,7 +1,9 @@
 package com.tmdb.core.model.db
 
+import io.objectbox.annotation.ConflictStrategy
 import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id
+import io.objectbox.annotation.Unique
 import kotlinx.serialization.Serializable
 
 /**
@@ -11,8 +13,10 @@ import kotlinx.serialization.Serializable
 @Serializable
 @Entity
 data class DbMovie(
-    @Id(assignable = true)
+    @Id
     var id: Long = 0L,
+    @Unique(onConflict = ConflictStrategy.REPLACE)
+    var idMovie: Long = 0L,
     val posterPath: String?,
     val popularity: Double,
     val voteCount: Int,
@@ -29,7 +33,7 @@ data class DbMovie(
     val releaseDate: String? = null,
 ) {
     override fun toString(): String {
-        return "DbMovie(id=$id, posterPath=$posterPath, popularity=$popularity, voteCount=$voteCount, video=$video, mediaType=$mediaType, " +
+        return "DbMovie(id=$idMovie, posterPath=$posterPath, popularity=$popularity, voteCount=$voteCount, video=$video, mediaType=$mediaType, " +
             "adult=$adult, backdropPath=$backdropPath, originalLanguage=$originalLanguage, originalTitle=$originalTitle, genreIds=$genreIds, " +
             "title=$title, voteAverage=$voteAverage, overview=$overview, releaseDate=$releaseDate)"
     }

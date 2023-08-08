@@ -6,7 +6,8 @@ import com.tmdb.core.model.mapper.MoviesMapper
 import com.tmdb.core.model.mapper.RecommendationMapper
 import com.tmdb.core.model.network.Movies
 import com.tmdb.core.network.CoroutineDispatchers
-import com.tmdb.core.network.config.RecommendConfig
+import com.tmdb.core.network.config.RecommendConfigDb
+import com.tmdb.core.network.config.RecommendConfigNetwork
 import com.tmdb.core.repos.LocalDbRepository
 import com.tmdb.core.repos.TMDBRepository
 import com.tmdb.core.ui.network.NetworkBoundRepository
@@ -21,13 +22,14 @@ import kotlinx.coroutines.flow.flowOn
 object RecommendationModule {
 
     suspend fun provideRecommendationModule(
-        recommendConfig: RecommendConfig,
+        recommendConfig: RecommendConfigNetwork,
         localDbRepository: LocalDbRepository,
         tmdbRepository: TMDBRepository,
         recommendationMapper: RecommendationMapper,
         moviesMapper: MoviesMapper,
         coroutineDispatchers: CoroutineDispatchers
     ): Flow<ResultData<SubDbMovie>> {
+
         return object : NetworkBoundRepository<SubDbMovie, Movies?>() {
             override suspend fun saveRemoteData(response: Movies?) {
                 response?.results?.let { listMovie ->
@@ -37,10 +39,17 @@ object RecommendationModule {
             }
 
             override suspend fun fetchFromLocal(): Flow<SubDbMovie> = flow {
+                val recommendConfigDb = RecommendConfigDb(
+                    offset = (
+                        if (recommendConfig.page == 1) 0L
+                        else (recommendConfig.page.minus(1)).times(20L)
+                        ),
+                    limit = 20
+                )
                 emit(
                     SubDbMovie(
                         totalResults = localDbRepository.getMovies()?.totalResult,
-                        listDbMovies = localDbRepository.getListMovie()
+                        listDbMovies = localDbRepository.getListMovie(recommendConfigDb)
                     )
                 )
             }

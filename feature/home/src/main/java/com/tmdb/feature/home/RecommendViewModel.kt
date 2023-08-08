@@ -9,7 +9,7 @@ import com.tmdb.core.model.mapper.RecommendationMapper
 import com.tmdb.core.model.network.Categories
 import com.tmdb.core.model.network.Movies
 import com.tmdb.core.network.CoroutineDispatchers
-import com.tmdb.core.network.config.RecommendConfig
+import com.tmdb.core.network.config.RecommendConfigNetwork
 import com.tmdb.core.repos.LocalDbRepository
 import com.tmdb.core.repos.TMDBRepository
 import com.tmdb.core.ui.base.StateModel
@@ -31,7 +31,7 @@ class RecommendViewModel(
     val genre = StateModel<Categories?>(null)
 
     fun getTMDBRecommend(paging: Int, callbackMovie: (SubDbMovie?) -> Unit) {
-        val recommendConfig = RecommendConfig(
+        val recommendConfig = RecommendConfigNetwork(
             movieId = Constants.MOVIE_ID,
             apiKey = Constants.API_KEY,
             page = paging

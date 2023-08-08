@@ -6,6 +6,7 @@ import com.tmdb.core.model.db.DbMovieDetail
 import com.tmdb.core.model.db.DbMovieDetail_
 import com.tmdb.core.model.db.DbMovies
 import com.tmdb.core.model.db.MyObjectBox
+import com.tmdb.core.network.config.RecommendConfigDb
 import io.objectbox.BoxStore
 import io.objectbox.android.Admin
 import io.objectbox.android.BuildConfig
@@ -41,15 +42,20 @@ class LocalDbRepositoryImpl : LocalDbRepository {
 
     override fun getBox(): BoxStore = boxStore
 
-    override fun getListMovie(): List<DbMovie> {
-        return movieBox.query().build().find()
+    override fun getListMovie(recommendConfigDb: RecommendConfigDb): List<DbMovie> {
+        return movieBox.query().build().find(recommendConfigDb.offset, recommendConfigDb.limit)
     }
 
     override fun getMovies(): DbMovies? = moviesBox.query().build().findFirst()
 
     override fun getMovieDetail(movieId: Long): DbMovieDetail? = movieDetail.query(DbMovieDetail_.id.equal(movieId)).build().findFirst()
 
-    override suspend fun saveListMovie(listDbMovie: List<DbMovie>) = movieBox.put(listDbMovie)
+    override suspend fun saveListMovie(listDbMovie: List<DbMovie>) {
+        val listDbMovieDistinct = listDbMovie.filter { movieNetwork ->
+            movieBox.all.none { movieDb -> movieDb.idMovie == movieNetwork.idMovie }
+        }
+        movieBox.put(listDbMovieDistinct)
+    }
 
     override suspend fun saveMovies(dbMovies: DbMovies) {
         moviesBox.put(dbMovies)

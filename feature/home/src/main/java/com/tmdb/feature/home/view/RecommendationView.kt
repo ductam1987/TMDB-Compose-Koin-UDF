@@ -51,7 +51,7 @@ fun RecommendationView(
             items(
                 count = movies.distinct().size,
                 key = { index ->
-                    movies.distinct()[index].id
+                    movies.distinct()[index].idMovie
                 }
             ) { index ->
                 RecommendationViewDetail(movies.distinct()[index], navToMovieDetail)
@@ -83,7 +83,7 @@ fun RecommendationViewDetail(movie: DbMovie?, navToMovieDetail: (Int) -> Unit?) 
                 imageWith = 300,
                 imageHeight = 150,
                 onClick = {
-                    navToMovieDetail.invoke(movie?.id?.toInt() ?: 0)
+                    navToMovieDetail.invoke(movie?.idMovie?.toInt() ?: 0)
                 }
             )
         }

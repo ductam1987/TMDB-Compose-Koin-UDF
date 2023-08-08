@@ -4,6 +4,7 @@ import android.content.Context
 import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.db.DbMovieDetail
 import com.tmdb.core.model.db.DbMovies
+import com.tmdb.core.network.config.RecommendConfigDb
 import io.objectbox.BoxStore
 
 /**
@@ -15,7 +16,7 @@ interface LocalDbRepository {
 
     fun getBox(): BoxStore
 
-    fun getListMovie(): List<DbMovie>
+    fun getListMovie(recommendConfigDb: RecommendConfigDb): List<DbMovie>
 
     fun getMovies(): DbMovies?
 

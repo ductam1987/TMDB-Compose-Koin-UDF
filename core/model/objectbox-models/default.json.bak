@@ -5,14 +5,14 @@
   "entities": [
     {
       "id": "1:2713148950282928359",
-      "lastPropertyId": "15:8770312139772976905",
+      "lastPropertyId": "16:1697411071194074270",
       "name": "DbMovie",
       "properties": [
         {
           "id": "1:3072336127308755661",
           "name": "id",
           "type": 6,
-          "flags": 129
+          "flags": 1
         },
         {
           "id": "2:4145571308487196657",
@@ -83,6 +83,11 @@
           "id": "15:8770312139772976905",
           "name": "releaseDate",
           "type": 9
+        },
+        {
+          "id": "16:1697411071194074270",
+          "name": "idMovie",
+          "type": 6
         }
       ],
       "relations": []
@@ -105,9 +110,133 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "3:2947863215925999183",
+      "lastPropertyId": "23:1044345791771030036",
+      "name": "DbMovieDetail",
+      "properties": [
+        {
+          "id": "1:2957598731976756184",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:2742615099623798681",
+          "name": "adult",
+          "type": 1
+        },
+        {
+          "id": "3:4379146545876238102",
+          "name": "backdropPath",
+          "type": 9
+        },
+        {
+          "id": "4:5028084838553256208",
+          "name": "budget",
+          "type": 5
+        },
+        {
+          "id": "5:5142350489651710748",
+          "name": "genres",
+          "type": 9
+        },
+        {
+          "id": "6:8676446816584685300",
+          "name": "homepage",
+          "type": 9
+        },
+        {
+          "id": "7:2045857671767451873",
+          "name": "imdbId",
+          "type": 9
+        },
+        {
+          "id": "8:9144630305288961717",
+          "name": "originalLanguage",
+          "type": 9
+        },
+        {
+          "id": "9:2233405178980329499",
+          "name": "originalTitle",
+          "type": 9
+        },
+        {
+          "id": "10:1578997704553665456",
+          "name": "overview",
+          "type": 9
+        },
+        {
+          "id": "11:541698646416882564",
+          "name": "popularity",
+          "type": 8
+        },
+        {
+          "id": "12:5580166039500213239",
+          "name": "posterPath",
+          "type": 9
+        },
+        {
+          "id": "13:3543221672601893257",
+          "name": "releaseDate",
+          "type": 9
+        },
+        {
+          "id": "14:2598296052017588992",
+          "name": "revenue",
+          "type": 5
+        },
+        {
+          "id": "15:6468475228938721422",
+          "name": "runtime",
+          "type": 5
+        },
+        {
+          "id": "16:4797495031797158107",
+          "name": "spokenLanguages",
+          "type": 9
+        },
+        {
+          "id": "17:2420114522400218871",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "18:3003138493550634381",
+          "name": "tagline",
+          "type": 9
+        },
+        {
+          "id": "19:7813334032138146466",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "20:5205194660597240582",
+          "name": "video",
+          "type": 1
+        },
+        {
+          "id": "21:207400655582166210",
+          "name": "voteAverage",
+          "type": 8
+        },
+        {
+          "id": "22:8113674048912754790",
+          "name": "voteCount",
+          "type": 5
+        },
+        {
+          "id": "23:1044345791771030036",
+          "name": "productionCountries",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "2:5411999651084113267",
+  "lastEntityId": "3:2947863215925999183",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

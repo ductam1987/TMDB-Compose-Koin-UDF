@@ -5,14 +5,14 @@
   "entities": [
     {
       "id": "1:2713148950282928359",
-      "lastPropertyId": "15:8770312139772976905",
+      "lastPropertyId": "16:1697411071194074270",
       "name": "DbMovie",
       "properties": [
         {
           "id": "1:3072336127308755661",
           "name": "id",
           "type": 6,
-          "flags": 129
+          "flags": 1
         },
         {
           "id": "2:4145571308487196657",
@@ -83,6 +83,13 @@
           "id": "15:8770312139772976905",
           "name": "releaseDate",
           "type": 9
+        },
+        {
+          "id": "16:1697411071194074270",
+          "name": "idMovie",
+          "indexId": "1:8821559064513117348",
+          "type": 6,
+          "flags": 32808
         }
       ],
       "relations": []
@@ -232,7 +239,7 @@
     }
   ],
   "lastEntityId": "3:2947863215925999183",
-  "lastIndexId": "0:0",
+  "lastIndexId": "1:8821559064513117348",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,

@@ -13,7 +13,7 @@ class RecommendationMapper : EntityMapper<DbMovie, Movie> {
 
     override fun mapToEntity(domain: Movie): DbMovie {
         return DbMovie(
-            id = domain.id.toLong(),
+            idMovie = domain.id.toLong(),
             posterPath = domain.poster_path,
             popularity = domain.popularity,
             voteCount = domain.vote_count,

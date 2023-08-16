@@ -1,0 +1,13 @@
+version: 2.1
+executors:
+  default:
+    docker:
+      - image: circleci/android:api-30
+jobs:
+  build:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: Build and Test
+          command: ./gradlew assembleDebug testDebug

@@ -25,6 +25,7 @@ include(":core:network")
 include(":core:model")
 include(":core:repos")
 include(":core:ui")
+include(":core:testing")
 
 include(":feature:home")
 include(":feature:detail")

@@ -1,4 +1,4 @@
-package com.tmdb.feature.recommend
+package com.tmdb.core.testing
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -10,13 +10,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.tmdb.core.model.fakeData.listMovieFakeData
-import com.tmdb.core.model.fakeData.movieFakeData4
 import com.tmdb.core.model.network.Movie
 import com.tmdb.core.ui.MovieVerticalView
 import com.tmdb.core.ui.OnLastItemReached
 import com.tmdb.core.ui.TitleView
+import com.tmdb.core.ui.dataTest.HomeFakeDataPreviewUI
+import com.tmdb.core.ui.dataTest.HomePreviewParameterProvider
 import com.tmdb.feature.recommend.R
 
 /**
@@ -64,13 +65,17 @@ fun UpcomingViewDetail(movie: Movie, navToMovieDetail: (Int) -> Unit?) {
 
 @Preview
 @Composable
-fun PreviewUpcomingView() {
+fun PreviewUpcomingView(
+    @PreviewParameter(HomePreviewParameterProvider::class) homeFakeDataPreviewUI: HomeFakeDataPreviewUI,
+) {
     val total = remember { mutableStateOf(5) }
-    UpcomingView(totalMoviesUpcoming = total, movies = listMovieFakeData, navToMovieDetail = {}) {}
+    UpcomingView(totalMoviesUpcoming = total, movies = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI, navToMovieDetail = {}) {}
 }
 
 @Preview
 @Composable
-fun PreviewUpcomingViewDetail() {
-    UpcomingViewDetail(movie = movieFakeData4) {}
+fun PreviewUpcomingViewDetail(
+    @PreviewParameter(HomePreviewParameterProvider::class) homeFakeDataPreviewUI: HomeFakeDataPreviewUI,
+) {
+    UpcomingViewDetail(movie = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI[0]) {}
 }

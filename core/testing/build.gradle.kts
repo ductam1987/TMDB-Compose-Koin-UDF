@@ -19,4 +19,6 @@ dependencies {
     api(libs.kotlinx.coroutines.test)
     api(libs.turbine)
     debugApi(libs.androidx.compose.ui.test.manifest)
+
+    implementation(project(":core:model"))
 }

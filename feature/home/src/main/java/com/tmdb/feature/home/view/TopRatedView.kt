@@ -9,14 +9,17 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.tmdb.core.model.fakeData.listMovieFakeData
-import com.tmdb.core.model.fakeData.movieFakeData4
+// import com.tmdb.core.model.fakeData.listMovieFakeData
+// import com.tmdb.core.model.fakeData.movieFakeData4
 import com.tmdb.core.model.network.Movie
+import com.tmdb.core.ui.DevicePreviews
 import com.tmdb.core.ui.MovieVerticalView
 import com.tmdb.core.ui.OnLastItemReached
 import com.tmdb.core.ui.TitleView
+import com.tmdb.core.ui.dataTest.HomeFakeDataPreviewUI
+import com.tmdb.core.ui.dataTest.HomePreviewParameterProvider
 import com.tmdb.feature.recommend.R
 
 /**
@@ -62,15 +65,19 @@ fun TopRatedViewDetail(movie: Movie, navToMovieDetail: (Int) -> Unit?) {
     MovieVerticalView(movieImg = movie.poster_path, movieName = movie.title, movieId = movie.id, navToMovieDetail)
 }
 
-@Preview
+@DevicePreviews
 @Composable
-fun PreviewTopRatedView() {
+fun PreviewTopRatedView(
+    @PreviewParameter(HomePreviewParameterProvider::class) homeFakeDataPreviewUI: HomeFakeDataPreviewUI,
+) {
     val total = remember { mutableStateOf(5) }
-    TopRatedView(totalMoviesTopRated = total, movies = listMovieFakeData, navToMovieDetail = {}) {}
+    TopRatedView(totalMoviesTopRated = total, movies = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI, navToMovieDetail = {}) {}
 }
 
-@Preview
+@DevicePreviews
 @Composable
-fun PreviewTopRatedViewDetail() {
-    TopRatedViewDetail(movie = movieFakeData4) {}
+fun PreviewTopRatedViewDetail(
+    @PreviewParameter(HomePreviewParameterProvider::class) homeFakeDataPreviewUI: HomeFakeDataPreviewUI,
+) {
+    TopRatedViewDetail(movie = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI[0]) {}
 }

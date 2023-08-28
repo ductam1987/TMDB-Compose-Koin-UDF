@@ -22,15 +22,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tmdb.core.model.db.DbMovie
-import com.tmdb.core.model.fakeData.listDbMovieFakeData
-import com.tmdb.core.model.fakeData.listGenreFakeData
-import com.tmdb.core.model.fakeData.listMovieFakeData
 import com.tmdb.core.model.network.Genre
 import com.tmdb.core.model.network.Movie
+import com.tmdb.core.ui.DevicePreviews
+import com.tmdb.core.ui.dataTest.HomeFakeDataPreviewUI
+import com.tmdb.core.ui.dataTest.HomePreviewParameterProvider
 import com.tmdb.feature.home.view.CategoryView
 import com.tmdb.feature.home.view.PopularView
 import com.tmdb.feature.home.view.RecommendationView
@@ -259,9 +259,11 @@ fun HomeScreenDetail(
     }
 }
 
-@Preview
+@DevicePreviews
 @Composable
-fun PreviewHomeDetailScreen() {
+fun PreviewHomeDetailScreen(
+    @PreviewParameter(HomePreviewParameterProvider::class) homeFakeDataPreviewUI: HomeFakeDataPreviewUI,
+) {
     val totalMoviesRecommend: MutableState<Int> = remember { mutableStateOf(100) }
     Box(
         modifier = Modifier
@@ -270,14 +272,14 @@ fun PreviewHomeDetailScreen() {
     ) {
         HomeScreenDetail(
             totalMoviesRecommend = totalMoviesRecommend,
-            moviesRecommendation = listDbMovieFakeData,
-            genreList = listGenreFakeData,
+            moviesRecommendation = homeFakeDataPreviewUI.listDbMovieFakeDataPreviewUI,
+            genreList = homeFakeDataPreviewUI.listGenreFakeDataPreviewUI,
             totalMoviesPopular = totalMoviesRecommend,
-            moviesPopular = listMovieFakeData,
+            moviesPopular = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI,
             totalMoviesTopRated = totalMoviesRecommend,
-            moviesTopRated = listMovieFakeData,
+            moviesTopRated = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI,
             totalMoviesUpcoming = totalMoviesRecommend,
-            moviesUpcoming = listMovieFakeData,
+            moviesUpcoming = homeFakeDataPreviewUI.listMovieFakeDataPreviewUI,
             loadMoreRecommendation = { /*TODO*/ },
             loadMorePopular = { /*TODO*/ },
             loadMoreTopRated = { /*TODO*/ },

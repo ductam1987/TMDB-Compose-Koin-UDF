@@ -13,6 +13,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:repos"))
     implementation(project(":core:network"))
+    implementation(project(":core:testing"))
 
     api(libs.androidx.compose.foundation)
     api(libs.androidx.compose.foundation.layout)

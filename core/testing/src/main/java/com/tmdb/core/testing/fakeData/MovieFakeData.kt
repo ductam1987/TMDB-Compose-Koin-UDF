@@ -1,4 +1,4 @@
-package com.tmdb.core.model.fakeData
+package com.tmdb.core.testing.fakeData
 
 import com.tmdb.core.model.db.DbMovie
 import com.tmdb.core.model.network.Movie

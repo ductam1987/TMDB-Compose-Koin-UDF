@@ -15,14 +15,17 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.tmdb.core.model.db.DbMovie
-import com.tmdb.core.model.fakeData.listDbMovieFakeData
+import com.tmdb.core.ui.DevicePreviews
+// import com.tmdb.core.model.fakeData.listDbMovieFakeData
 import com.tmdb.core.ui.LoadImage
 import com.tmdb.core.ui.OnLastItemReached
 import com.tmdb.core.ui.TitleView
 import com.tmdb.core.ui.convertImageURL
+import com.tmdb.core.ui.dataTest.HomeFakeDataPreviewUI
+import com.tmdb.core.ui.dataTest.HomePreviewParameterProvider
 import com.tmdb.feature.recommend.R
 
 /**
@@ -90,12 +93,14 @@ fun RecommendationViewDetail(movie: DbMovie?, navToMovieDetail: (Int) -> Unit?) 
     }
 }
 
-@Preview
+@DevicePreviews
 @Composable
-fun PreviewRecommendation() {
+fun PreviewRecommendation(
+    @PreviewParameter(HomePreviewParameterProvider::class) homeFakeDataPreviewUI: HomeFakeDataPreviewUI,
+) {
     val moviesRecommendation = remember { mutableStateListOf<DbMovie>() }
     val totalMoviesRecommend: MutableState<Int> = remember { mutableStateOf(0) }
-    moviesRecommendation.addAll(listDbMovieFakeData)
+    moviesRecommendation.addAll(homeFakeDataPreviewUI.listDbMovieFakeDataPreviewUI)
     totalMoviesRecommend.value = 100
     RecommendationView(
         totalMoviesRecommend,

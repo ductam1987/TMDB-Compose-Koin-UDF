@@ -17,8 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.tmdb.core.model.fakeData.reviewDetailsFakeData
 import com.tmdb.core.model.network.ReviewDetails
+import com.tmdb.core.testing.fakeData.reviewDetailsFakeData
 
 /**
  * Created by Tam Nguyen on 24/07/2023.

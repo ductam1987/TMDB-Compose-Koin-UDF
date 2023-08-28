@@ -20,18 +20,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarStyle
 import com.tmdb.core.model.db.DbMovieDetail
-import com.tmdb.core.model.fakeData.dbMovieDetailFakeData
 import com.tmdb.core.model.network.Genre
 import com.tmdb.core.model.network.ProductCountries
+import com.tmdb.core.ui.DevicePreviews
 import com.tmdb.core.ui.LoadImage
 import com.tmdb.core.ui.convertImageURL
+import com.tmdb.core.ui.dataTest.MovieDetailFakeDataPreviewUI
+import com.tmdb.core.ui.dataTest.MovieDetailPreviewParameterProvider
 import com.tmdb.feature.detail.R
 import kotlinx.serialization.json.Json
 
@@ -191,8 +193,10 @@ fun MovieDetailBody(movieDetail: DbMovieDetail, navBack: () -> Unit) {
     }
 }
 
+@DevicePreviews
 @Composable
-@Preview
-fun PreviewMovieDetail() {
-    MovieDetailBody(movieDetail = dbMovieDetailFakeData) {}
+fun PreviewMovieDetail(
+    @PreviewParameter(MovieDetailPreviewParameterProvider::class) movieDetailFakeDataPreviewUI: MovieDetailFakeDataPreviewUI
+) {
+    MovieDetailBody(movieDetail = movieDetailFakeDataPreviewUI.listDbMovieDetailFakeDataPreviewUI[0]) {}
 }
